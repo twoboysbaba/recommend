@@ -33,7 +33,7 @@ class InnerProduct(nn.Module):
         inner_product = p * q
         if self.reduce_sum:
             # 默认打开，将最后一维的数据累加起来，降低计算复杂度
-            inner_product = torch.sum(inner_product, dim=2, keepdim=True)
+            inner_product = torch.sum(inner_product, dim=2, keepdim=True)#[32, 325, 1]
         return inner_product
 
 class OutterProduct(nn.Module):
